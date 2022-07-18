@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #1D1F20;
+}
+#box {
+
+    width: 90% !important;
+    margin: 0 auto;
+    padding: 40px 0;
+    color: white;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+}
+.gradient-border {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #cb0505, #6d2630, #b54965, #75343b, #5073b8, #1098ad);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+input::placeholder{
+    color: rgba(205, 92, 92, 0.44);
+}
+
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.text-box {
+    width: 100%;
+}
+.text-box input {
+    width: 80% !important;
+    border: none;
+    color: lightgray;
+    border-bottom: 1px solid gray ;
+    background: inherit !important;
+    transition: all linear 200ms;
+}
+
+.text-box > small {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.text-box input:focus {
+    color: white;
+    width: 100% !important;
+    --tw-ring-shadow: none !important;
+    border-bottom: 1px solid indianred ;
+    background: inherit !important;
+}
+
+.submit {
+    padding: 12px 40px ;
+    border-radius: 4px;
+    background: inherit;
+    color: gray;
+    border: 1px solid indianred;
+    transition: all linear 200ms;
+    font-weight: 600;
+}
+.submit:hover {
+    padding: 12px 40px ;
+    border-radius: 4px;
+    background: indianred;
+    color: white;
+}
+
